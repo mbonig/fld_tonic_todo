@@ -1,6 +1,10 @@
 :host {
   .completed {
-    text-decoration: line-through;
+    input {
+      background-color: #d2d2d2;
+      color: #222;
+      text-decoration: line-through;
+    }
   }
   ul {
     margin-top: 2rem;
