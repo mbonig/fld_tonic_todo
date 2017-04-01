@@ -1,0 +1,15 @@
+<section>
+  <div class="input-group">
+    <input class="form-control" type="text" [(ngModel)]="newTask" placeholder="<enter new task here>"/>
+    <button class="input-group-addon" (click)="addTodo(newTask)">+</button>
+  </div>
+  <ul class="list-unstyled">
+    <li *ngFor="let todo of todos" [ngClass]="{'completed': todo.isCompleted}">
+      <input class="text" type="text" [(ngModel)]="todo.text"/>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary" (click)="todo.isCompleted = !todo.isCompleted">&#x2714;</button>
+        <button type="button" class="btn btn-warning" (click)="removeTodo(todo)">X</button>
+      </div>
+    </li>
+  </ul>
+</section>

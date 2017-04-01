@@ -58,7 +58,7 @@
       "check-whitespace"
     ],
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "radix": true,
@@ -91,13 +91,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "my",
+      "fld",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "my",
+      "fld",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
@@ -112,11 +112,11 @@
     "pipe-naming": [
       true,
       "camelCase",
-      "my"
+      "fld"
     ],
     "no-attribute-parameter-decorator": true,
     "no-forward-ref": true,
-    "import-destructuring-spacing": true,
+    "import-destructuring-spacing": false,
     "no-access-missing-member": true,
     "templates-use-public": true,
     "invoke-injectable": true
