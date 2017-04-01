@@ -5,7 +5,7 @@
   </div>
   <ul class="list-unstyled">
     <li *ngFor="let todo of todos" [ngClass]="{'completed': todo.isCompleted}">
-      <input class="text" type="text" [(ngModel)]="todo.text"/>
+      <input class="text" type="text" [(ngModel)]="todo.text" (change)="save()"/>
       <div class="btn-group">
         <button type="button" class="btn btn-secondary" (click)="todo.isCompleted = !todo.isCompleted">&#x2714;</button>
         <button type="button" class="btn btn-warning" (click)="removeTodo(todo)">X</button>

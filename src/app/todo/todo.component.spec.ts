@@ -5,16 +5,18 @@ import {TodoComponent} from "./todo.component";
 
 describe('Todo', () => {
   // provide our implementations or mocks to the dependency injector
+  let component;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [TodoComponent],
       providers: []
     });
+    component = TestBed.createComponent(TodoComponent);
   });
 
   it('should remove todo', () => {
-    let component = new TodoComponent();
     component.addTodo("one");
     component.addTodo("two");
     component.addTodo("three");
