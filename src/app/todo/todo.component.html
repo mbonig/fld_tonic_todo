@@ -9,7 +9,7 @@
     <li *ngFor="let todo of todos" [ngClass]="{'completed': todo.isCompleted}">
       <input class="text form-control" type="text" [(ngModel)]="todo.text" (change)="save()"/>
       <div class="btn-group">
-        <button type="button" class="btn btn-success" (click)="todo.isCompleted = !todo.isCompleted">&#x2714;</button>
+        <button type="button" class="btn btn-success" (click)="toggleTodo(todo)">&#x2714;</button>
         <button type="button" class="btn btn-warning" (click)="removeTodo(todo)">X</button>
       </div>
     </li>

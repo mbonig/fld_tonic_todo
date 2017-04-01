@@ -19,18 +19,21 @@ export class TodoComponent {
   }
 
   addTodo(task) {
-    this.todos.unshift({text: task, isCompleted: false});
+    this.todos = this.apiService.addTask(task);
     this.newTask = '';
-    this.save();
   }
 
   removeTodo(todo) {
-    this.todos.splice(this.todos.indexOf(todo), 1);
+    this.todos = this.apiService.removeTodo(todo);
+  }
+
+  toggleTodo(todo) {
+    todo.isCompleted = !todo.isCompleted;
     this.save();
   }
 
   save() {
-    this.apiService.save(this.todos);
+    this.apiService.save();
   }
 }
 
