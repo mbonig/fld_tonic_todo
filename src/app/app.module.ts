@@ -9,6 +9,7 @@ import {ApiService} from './shared';
 
 
 import {removeNgStyles, createNewHosts} from '@angularclass/hmr';
+import {TodosComponent} from "./todo/todos.component";
 import {TodoComponent} from "./todo/todo.component";
 
 @NgModule({
@@ -19,6 +20,7 @@ import {TodoComponent} from "./todo/todo.component";
   ],
   declarations: [
     AppComponent,
+    TodosComponent,
     TodoComponent
   ],
   providers: [

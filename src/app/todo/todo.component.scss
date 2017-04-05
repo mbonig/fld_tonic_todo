@@ -1,19 +1,16 @@
 :host {
-  .completed {
+  &.completed {
     input {
       background-color: #d2d2d2;
       color: #222;
       text-decoration: line-through;
     }
   }
-  ul {
-    margin-top: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  .text {
+    flex: 1 1 auto;
   }
-  li {
-    display: flex;
-    flex-direction: row;
-    .text {
-      flex: 1 1 auto;
-    }
-  }
+
 }

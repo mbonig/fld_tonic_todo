@@ -1,0 +1,15 @@
+<section>
+  <div class="input-group">
+    <input class="form-control" type="text" [(ngModel)]="newTask" placeholder="<enter new task here>"/>
+    <button class="input-group-addon btn btn-primary"
+            (click)="addTodo(newTask)"
+            [disabled]="!newTask">+</button>
+  </div>
+  <ul class="list-unstyled">
+    <li *ngFor="let todo of todos" >
+      <fld-todo-editor [todo]="todo" ></fld-todo-editor>
+
+    </li>
+    <li *ngIf="todos.length === 0">You have no todos. Enter one above to get started.</li>
+  </ul>
+</section>

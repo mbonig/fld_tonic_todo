@@ -1,34 +1,32 @@
-import {Component} from "@angular/core";
+import {Component, HostBinding, Input, OnInit} from "@angular/core";
 import {ApiService} from "../shared/api.service";
+
 @Component({
-  selector: 'fld-todos',
+  selector: 'fld-todo-editor',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss'],
   providers: [ApiService]
 })
-export class TodoComponent {
+export class TodoComponent implements OnInit {
 
-  todos: Todo[] = [];
-  newTask = '';
+
+  @Input() todo;
+  @HostBinding('class.completed') isCompleted;
 
   constructor(private apiService: ApiService) {
-    let saved = apiService.getTodos();
-    if (saved && saved.length > 0) {
-      this.todos = saved;
-    }
+
   }
 
-  addTodo(task) {
-    this.todos = this.apiService.addTask(task);
-    this.newTask = '';
+  ngOnInit(): void {
+    this.isCompleted = this.todo.isCompleted;
   }
 
-  removeTodo(todo) {
-    this.todos = this.apiService.removeTodo(todo);
+  removeTodo() {
+    this.apiService.removeTodo(this.todo);
   }
 
-  toggleTodo(todo) {
-    todo.isCompleted = !todo.isCompleted;
+  toggleTodo() {
+    this.isCompleted = (this.todo.isCompleted = !this.todo.isCompleted);
     this.save();
   }
 
@@ -37,7 +35,3 @@ export class TodoComponent {
   }
 }
 
-interface Todo {
-  text: string;
-  isCompleted: boolean;
-}

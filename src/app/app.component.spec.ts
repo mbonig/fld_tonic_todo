@@ -4,6 +4,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 
 import {ApiService} from './shared';
 import {AppComponent} from './app.component';
+import {TodosComponent} from "./todo/todos.component";
 import {TodoComponent} from "./todo/todo.component";
 
 describe('App', () => {
@@ -11,7 +12,7 @@ describe('App', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent, TodoComponent],
+      declarations: [AppComponent, TodosComponent, TodoComponent],
       providers: [ApiService, provideRoutes([])]
     });
   });

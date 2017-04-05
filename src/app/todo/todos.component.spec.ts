@@ -1,6 +1,6 @@
 import {TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {TodoComponent} from "./todo.component";
+import {TodosComponent} from "./todos.component";
 
 
 describe('Todo', () => {
@@ -10,10 +10,10 @@ describe('Todo', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [TodoComponent],
+      declarations: [TodosComponent],
       providers: []
     });
-    component = TestBed.createComponent(TodoComponent);
+    component = TestBed.createComponent(TodosComponent);
   });
 
   it('should remove todo', () => {
